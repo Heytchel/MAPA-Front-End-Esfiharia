@@ -1,0 +1,198 @@
+/* VARIÁVEIS DE CORES */
+:root {
+    --amarelo: #D4A017;
+    --marrom: #8B4513;
+    --marrom-claro: #A0522D;
+    --creme: #FFF8DC;
+    --off-white: #f8f8f8;
+    --branco: #ffffff;
+    --texto: #333;
+    --sombra: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ESTILOS GERAIS */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* CABEÇALHO */
+.header-full {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/1.png') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    background-color: var(--marrom-claro);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--amarelo);
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    background-color: var(--off-white);
+    padding: 40px 20px;
+    min-height: 60vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro h2 {
+    color: var(--marrom);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* DESTAQUES */
+.destaques {
+    padding: 20px 0;
+}
+
+.destaques h2 {
+    text-align: center;
+    color: var(--marrom);
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+.destaque-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.destaque-item {
+    background: var(--branco);
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s;
+}
+
+.destaque-item:hover {
+    transform: translateY(-5px);
+}
+
+.destaque-item img {
+    width: 100%;
+    border-radius: 8px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--amarelo);
+}
+
+.preco {
+    display: block;
+    font-weight: bold;
+    color: var(--marrom);
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--marrom);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header-full {
+        height: 300px;
+    }
+    
+    .destaque-item {
+        width: 100%;
+    }
+}
+/* [Mantenha todos os estilos anteriores] */
+
+/* Novo: Estilos do Carrossel */
+.carrossel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.destaque-item {
+    min-width: 280px;
+    margin: 0 15px;
+    flex: 0 0 auto;
+}
+
+.carrossel-controle {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.carrossel-controle button {
+    background-color: var(--marrom);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.carrossel-controle button:hover {
+    background-color: var(--amarelo);
+}
